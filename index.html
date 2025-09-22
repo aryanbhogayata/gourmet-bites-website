@@ -11,11 +11,11 @@
       rel="stylesheet"
     />
 
-    <!-- Google Fonts (Teko & Lora) -->
+    <!-- Google Fonts (Cormorant Garamond & Montserrat) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -28,16 +28,22 @@
     <!-- Custom CSS -->
     <style>
       :root {
-        --primary-color: #d9534f; /* Terracotta Red */
-        --secondary-color: #f0ad4e; /* Saffron Gold */
-        --dark-bg: #4e342e; /* Deep Earth Brown */
-        --light-text: #fdf5e6; /* Parchment White */
+        --primary-color: #2c3e50; /* Deep Charcoal */
+        --secondary-color: #d4af37; /* Metallic Gold */
+        --dark-bg: #212529; /* Near Black */
+        --light-text: #f8f9fa;
+        --light-bg: #f7f7f7; /* Creamy Off-white */
+        --text-dark: #34495e; /* Dark Slate */
+      }
+
+      html {
+        scroll-behavior: smooth;
       }
 
       body {
-        font-family: "Lato", sans-serif;
-        background-color: var(--dark-bg);
-        color: var(--light-text);
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--light-bg);
+        color: var(--text-dark);
       }
 
       h1,
@@ -47,68 +53,27 @@
       h5,
       h6,
       .navbar-brand {
-        font-family: "Playfair Display", serif;
-        font-weight: 700;
-        letter-spacing: 1px;
+        font-family: "Cormorant Garamond", serif;
       }
 
-      .navbar {
-        background-color: rgba(78, 52, 46, 0.85);
-        backdrop-filter: blur(10px);
-      }
-
-      .navbar-brand {
-        color: var(--secondary-color) !important;
-        font-size: 2rem;
-      }
-
-      .nav-link {
-        color: var(--light-text) !important;
-      }
-
-      .nav-link:hover,
-      .nav-link.active {
-        color: var(--secondary-color) !important;
-      }
-
-      .btn-primary {
-        background-color: var(--secondary-color);
-        border-color: var(--secondary-color);
-        color: var(--dark-bg);
-        font-family: "Playfair Display", serif;
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-        padding: 0.5rem 1.5rem;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #f5c276;
-        border-color: #f5c276;
-      }
-
-      .hero {
-        background: linear-gradient(
-            rgba(78, 52, 46, 0.7),
-            rgba(78, 52, 46, 0.7)
-          ),
-          url("https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1974&auto=format&fit=crop")
-            no-repeat center center;
-        background-size: cover;
-        height: 80vh;
+      /* Section Styling to simulate pages */
+      .page-section {
+        min-height: 100vh;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         justify-content: center;
-        text-align: center;
+        align-items: center;
+        border-bottom: 1px solid #e0e0e0;
       }
 
       .section-title {
         text-align: center;
-        margin-bottom: 50px;
-        font-weight: 700;
-        font-size: 3rem;
+        margin-bottom: 3rem;
+        font-size: 3.5rem;
         color: var(--primary-color);
+        position: relative;
       }
 
       .section-title::after {
@@ -121,64 +86,144 @@
         border-radius: 2px;
       }
 
+      /* Navigation Bar */
+      .navbar {
+        background-color: rgba(247, 247, 247, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #eee;
+      }
+
+      .navbar-brand {
+        color: var(--primary-color) !important;
+        font-size: 2.2rem;
+        font-weight: 700;
+      }
+
+      .nav-link {
+        color: var(--text-dark) !important;
+        font-weight: 700;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--secondary-color) !important;
+      }
+
+      /* Hero Section */
+      #home {
+        background: linear-gradient(
+            rgba(44, 62, 80, 0.6),
+            rgba(44, 62, 80, 0.6)
+          ),
+          url("https://images.pexels.com/photos/262047/pexels-photo-262047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+            no-repeat center center;
+        background-size: cover;
+        background-attachment: fixed;
+        color: var(--light-text);
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .btn-primary {
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        color: white;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #c5a230;
+        border-color: #c5a230;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* About Section */
+      #about img {
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Menu & Specials Card */
+      .menu-item-card,
       .special-card {
-        background-color: #6d4c41;
-        border: 1px solid #8d6e63;
-        border-radius: 15px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .special-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      }
-
-      .special-card-img {
-        height: 250px;
-        object-fit: cover;
-      }
-
-      .price-tag {
-        font-size: 2rem;
-        font-family: "Teko", sans-serif;
-        color: var(--secondary-color);
-      }
-
-      #menu {
-        background-color: #3e2723;
-      }
-
-      .menu-item-card {
-        background-color: #6d4c41;
+        background-color: white;
+        border: 1px solid #eee;
         border-radius: 10px;
         padding: 1.5rem;
+        margin-bottom: 1rem;
+        transition: all 0.3s ease;
+      }
+      .menu-item-card:hover,
+      .special-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        border-left: 5px solid var(--secondary-color);
+      }
+      .special-card {
+        border-left: 5px solid transparent;
+      }
+      .special-card .text-primary {
+        color: var(--secondary-color) !important;
       }
 
-      .menu-category-title {
-        color: var(--secondary-color);
-        font-size: 2.5rem;
+      /* Gallery */
+      #gallery .img-fluid {
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+      }
+      #gallery .img-fluid:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        background-color: #fff;
+        border-left: 5px solid var(--secondary-color);
+        padding: 2rem;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Reservations Form */
+      .form-control {
+        border-radius: 5px;
+        padding: 0.75rem;
+      }
+      .form-control:focus {
+        box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+        border-color: var(--secondary-color);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-bg);
+        color: var(--light-text);
+        padding: 4rem 0;
         text-align: center;
-        margin-bottom: 2rem;
-        text-transform: uppercase;
       }
-
-      .text-gold {
+      footer a {
         color: var(--secondary-color);
-      }
-
-      .footer {
-        background-color: #211a18;
       }
     </style>
   </head>
   <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <i class="bi bi-leaf"></i> Gourmet Bites
-        </a>
+        <a class="navbar-brand" href="#home">Gourmet Bites</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -189,250 +234,486 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link active" href="#hero">Home</a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#specials">Chef's Specials</a>
+              <a class="nav-link" href="#philosophy">Philosophy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#specials">Specials</a>
             </li>
             <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#footer">Contact</a>
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Reviews</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#events">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reservations">Reservations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" id="hero">
-      <div class="container text-white">
-        <h1 class="display-2">The Art of Pure Vegetarian Cuisine</h1>
-        <p class="lead fs-4">
-          Experience the harmony of nature's finest ingredients and timeless
-          Indian spices.
+    <!-- 1. Home Section -->
+    <section id="home" class="page-section">
+      <div class="hero-content">
+        <h1 class="display-1">Experience Exquisite Cuisine</h1>
+        <p class="lead fs-4 my-4">
+          Where culinary artistry and timeless tradition converge.
         </p>
-        <a href="#menu" class="btn btn-primary btn-lg mt-3">Explore the Menu</a>
+        <a href="#reservations" class="btn btn-primary">Book Your Table</a>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- Finest Dishes Section -->
-      <section id="specials" class="py-5">
-        <div class="container">
-          <h2 class="section-title">Chef's Specials</h2>
-          <div class="row g-4">
-            <!-- Special Dish 1 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="card special-card text-white h-100">
-                <img
-                  src="https://placehold.co/600x400/8B4513/FFFFFF?text=Paneer+Pasanda"
-                  class="card-img-top special-card-img"
-                  alt="Paneer Pasanda"
-                />
-                <div class="card-body text-center d-flex flex-column">
-                  <h4 class="card-title fs-2">Paneer Pasanda</h4>
-                  <p class="card-text flex-grow-1">
-                    Stuffed paneer sandwiches in a rich, creamy onion-tomato
-                    gravy. A truly royal dish.
-                  </p>
-                  <p class="price-tag">₹950</p>
-                </div>
-              </div>
+    <!-- 2. About Us Section -->
+    <section id="about" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Our Story</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <img
+              src="https://placehold.co/600x400/2C3E50/FFFFFF?text=Restaurant+Interior"
+              class="img-fluid"
+              alt="Restaurant Interior"
+            />
+          </div>
+          <div class="col-md-6">
+            <h3>Welcome to Gourmet Bites</h3>
+            <p class="lead">
+              Founded in 2010, Gourmet Bites began as a humble dream to share
+              the rich heritage of Indian vegetarian cuisine with the world. We
+              believe in the power of fresh, locally-sourced ingredients to
+              create dishes that are not only delicious but also nourishing for
+              the body and soul.
+            </p>
+            <p>
+              Our journey has been one of passion, dedication, and a relentless
+              pursuit of culinary perfection. We invite you to be a part of our
+              story and experience the magic for yourself.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Our Philosophy Section -->
+    <section id="philosophy" class="page-section bg-light">
+      <div class="container text-center">
+        <h2 class="section-title">Our Culinary Philosophy</h2>
+        <p class="lead mb-5 col-lg-8 mx-auto">
+          We are committed to three core principles: authenticity in flavor,
+          sustainability in practice, and warmth in hospitality.
+        </p>
+        <div class="row">
+          <div class="col-md-4">
+            <i
+              class="bi bi-patch-check-fill fs-1 mb-3"
+              style="color: var(--secondary-color)"
+            ></i>
+            <h4>Authenticity</h4>
+            <p>
+              Using age-old recipes and traditional cooking methods to bring you
+              the true taste of India.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <i class="bi bi-recycle fs-1 text-success mb-3"></i>
+            <h4>Sustainability</h4>
+            <p>
+              Partnering with local farmers and suppliers to ensure the
+              freshest, highest-quality produce.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
+            <h4>Hospitality</h4>
+            <p>
+              Treating every guest like family, ensuring a memorable dining
+              experience from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Chef's Specials Section -->
+    <section id="specials" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Chef's Specials</h2>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="special-card text-center h-100">
+              <h4>Paneer Pasanda</h4>
+              <p>
+                Stuffed paneer sandwiches in a rich, creamy onion-tomato gravy.
+                A truly royal dish.
+              </p>
+              <h5 class="text-primary mt-3">Rs.950</h5>
             </div>
-            <!-- Special Dish 2 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="card special-card text-white h-100">
-                <img
-                  src="https://placehold.co/600x400/D2691E/FFFFFF?text=Dal+Makhani"
-                  class="card-img-top special-card-img"
-                  alt="Dal Makhani"
-                />
-                <div class="card-body text-center d-flex flex-column">
-                  <h4 class="card-title fs-2">Dal Makhani</h4>
-                  <p class="card-text flex-grow-1">
-                    Black lentils simmered overnight with butter and cream for a
-                    uniquely rich flavor.
-                  </p>
-                  <p class="price-tag">₹880</p>
-                </div>
-              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="special-card text-center h-100">
+              <h4>Dal Makhani</h4>
+              <p>
+                Black lentils simmered overnight with butter and cream for a
+                uniquely rich flavor.
+              </p>
+              <h5 class="text-primary mt-3">Rs.880</h5>
             </div>
-            <!-- Special Dish 3 -->
-            <div class="col-lg-4 col-md-6">
-              <div class="card special-card text-white h-100">
-                <img
-                  src="https://placehold.co/600x400/DAA520/FFFFFF?text=Malai+Kofta"
-                  class="card-img-top special-card-img"
-                  alt="Malai Kofta"
-                />
-                <div class="card-body text-center d-flex flex-column">
-                  <h4 class="card-title fs-2">Shaahi Malai Kofta</h4>
-                  <p class="card-text flex-grow-1">
-                    Paneer dumplings in a rich, creamy, and mildly sweet
-                    onion-tomato gravy.
-                  </p>
-                  <p class="price-tag">₹850</p>
-                </div>
-              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="special-card text-center h-100">
+              <h4>Shaahi Malai Kofta</h4>
+              <p>
+                Paneer dumplings in a rich, creamy, and mildly sweet
+                onion-tomato gravy.
+              </p>
+              <h5 class="text-primary mt-3">Rs.850</h5>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Menu Section -->
-      <section id="menu" class="py-5">
-        <div class="container">
-          <h2 class="section-title">Explore Our Menu</h2>
-
-          <!-- Appetizers -->
-          <h3 class="menu-category-title">Appetizers</h3>
-          <div class="row g-4 mb-5">
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Paneer Tikka Shashlik</h5>
-                  <p class="mb-0 text-white-50">
-                    Cottage cheese marinated in spices and grilled.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹450</h5>
+    <!-- 5. Full Menu Section -->
+    <section id="menu" class="page-section bg-light">
+      <div class="container">
+        <h2 class="section-title">Our Menu</h2>
+        <!-- Appetizers -->
+        <h3
+          class="text-center h4 mb-4"
+          style="
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+          "
+        >
+          Appetizers
+        </h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <div
+              class="menu-item-card d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h5>Paneer Tikka Shashlik</h5>
+                <p class="mb-0 text-muted small">
+                  Cottage cheese marinated in spices and grilled.
+                </p>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Hara Bhara Kebab</h5>
-                  <p class="mb-0 text-white-50">
-                    Spinach, peas, and potato patties, delicately spiced.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹380</h5>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Dahi Ke Kebab</h5>
-                  <p class="mb-0 text-white-50">
-                    Soft, melt-in-your-mouth kebabs made from hung curd.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹420</h5>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Makai Tikki</h5>
-                  <p class="mb-0 text-white-50">
-                    Golden corn patties with a blend of gentle spices.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹390</h5>
-              </div>
+              <h5 style="color: var(--secondary-color)">Rs.450</h5>
             </div>
           </div>
-
-          <!-- Main Courses -->
-          <h3 class="menu-category-title">Main Courses</h3>
-          <div class="row g-4 mb-5">
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Navratan Korma</h5>
-                  <p class="mb-0 text-white-50">
-                    Nine select vegetables in a rich, creamy cashew sauce.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹780</h5>
+          <div class="col-lg-6">
+            <div
+              class="menu-item-card d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h5>Hara Bhara Kebab</h5>
+                <p class="mb-0 text-muted small">
+                  Spinach, peas, and potato patties, delicately spiced.
+                </p>
               </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Kadhai Paneer</h5>
-                  <p class="mb-0 text-white-50">
-                    Paneer and bell peppers in a fragrant, spicy gravy.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹750</h5>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Palak Kofta</h5>
-                  <p class="mb-0 text-white-50">
-                    Spinach and paneer dumplings in a silky spinach curry.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹720</h5>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Subz Dum Biryani</h5>
-                  <p class="mb-0 text-white-50">
-                    Aromatic basmati rice with seasonal vegetables.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹850</h5>
-              </div>
-            </div>
-          </div>
-
-          <!-- Desserts -->
-          <h3 class="menu-category-title">Desserts</h3>
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Gulab Jamun</h5>
-                  <p class="mb-0 text-white-50">
-                    Soft, berry-sized balls in a sweet sugar syrup.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹250</h5>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="menu-item-card d-flex justify-content-between">
-                <div>
-                  <h5 class="fs-4">Shahi Tukda</h5>
-                  <p class="mb-0 text-white-50">
-                    Rich bread pudding with saffron and cardamom.
-                  </p>
-                </div>
-                <h5 class="fs-4 text-gold">₹350</h5>
-              </div>
+              <h5 style="color: var(--secondary-color)">Rs.380</h5>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+        <!-- Main Courses -->
+        <h3
+          class="text-center h4 mt-5 mb-4"
+          style="
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--text-dark);
+          "
+        >
+          Main Courses
+        </h3>
+        <div class="row">
+          <div class="col-lg-6">
+            <div
+              class="menu-item-card d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h5>Navratan Korma</h5>
+                <p class="mb-0 text-muted small">
+                  Nine select vegetables in a rich, creamy cashew sauce.
+                </p>
+              </div>
+              <h5 style="color: var(--secondary-color)">Rs.780</h5>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="menu-item-card d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <h5>Subz Dum Biryani</h5>
+                <p class="mb-0 text-muted small">
+                  Aromatic basmati rice with seasonal vegetables.
+                </p>
+              </div>
+              <h5 style="color: var(--secondary-color)">Rs.850</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Gallery Section -->
+    <section id="gallery" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Visual Delights</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Paneer Tikka"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Assorted Indian Dishes"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/1482803/pexels-photo-1482803.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Vegetable Biryani"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Restaurant Ambience"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Elegant Table Setting"
+            />
+          </div>
+          <div class="col-md-4">
+            <img
+              src="https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Fine Dining Setup"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Testimonials Section -->
+    <section id="testimonials" class="page-section bg-light">
+      <div class="container">
+        <h2 class="section-title">What Our Guests Say</h2>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="testimonial-card">
+              <p class="fst-italic">
+                "An unforgettable experience! The Dal Makhani was the best I've
+                ever had. The service was impeccable. We will definitely be
+                back."
+              </p>
+              <p class="fw-bold mb-0 mt-3" style="color: var(--primary-color)">
+                - Anjali Sharma
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="testimonial-card">
+              <p class="fst-italic">
+                "Gourmet Bites is a gem. The ambience is beautiful, and every
+                dish we tried was bursting with flavor. A must-visit for any
+                vegetarian food lover."
+              </p>
+              <p class="fw-bold mb-0 mt-3" style="color: var(--primary-color)">
+                - Rahul Verma
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Private Events Section -->
+    <section id="events" class="page-section">
+      <div class="container">
+        <h2 class="section-title">Host Your Event With Us</h2>
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h3>Celebrate Your Special Moments</h3>
+            <p class="lead">
+              From intimate family gatherings to corporate dinners, our elegant
+              space and customized menus provide the perfect setting for any
+              occasion.
+            </p>
+            <p>
+              Our dedicated events team will work with you every step of the way
+              to ensure your event is flawless and memorable. Contact us to
+              learn more about our packages and availability.
+            </p>
+            <a href="#contact" class="btn btn-primary mt-3">Inquire Now</a>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <img
+              src="https://images.pexels.com/photos/1307698/pexels-photo-1307698.jpeg?auto=compress&cs=tinysrgb&w=600"
+              class="img-fluid"
+              alt="Private Dining Room Setup"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Reservations Section -->
+    <section id="reservations" class="page-section bg-light">
+      <div class="container">
+        <h2 class="section-title">Make a Reservation</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="Phone Number"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Number of Guests"
+                    min="1"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="res-date" class="form-label visually-hidden"
+                    >Date</label
+                  >
+                  <input
+                    type="date"
+                    id="res-date"
+                    class="form-control"
+                    required
+                    min="2025-09-22"
+                    max="2025-12-22"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="res-time" class="form-label visually-hidden"
+                    >Time</label
+                  >
+                  <input
+                    type="time"
+                    id="res-time"
+                    class="form-control"
+                    required
+                    min="12:00"
+                    max="22:00"
+                    step="1800"
+                  />
+                </div>
+                <div class="col-12">
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Special Requests (optional)"
+                  ></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-primary">
+                    Submit Request
+                  </button>
+                </div>
+              </div>
+            </form>
+            <p class="text-center mt-3 text-muted small">
+              Please note: Reservations can be made between 12:00 PM and 10:00
+              PM, up to 3 months in advance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Contact Section -->
+    <section id="contact" class="page-section">
+      <div class="container text-center">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <i
+              class="bi bi-geo-alt-fill fs-2"
+              style="color: var(--secondary-color)"
+            ></i>
+            <h4 class="mt-2">Address</h4>
+            <p>123 Culinary Lane, Foodie City, IN 110001</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <i
+              class="bi bi-telephone-fill fs-2"
+              style="color: var(--secondary-color)"
+            ></i>
+            <h4 class="mt-2">Phone</h4>
+            <p>+91 98765 43210</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <i
+              class="bi bi-envelope-fill fs-2"
+              style="color: var(--secondary-color)"
+            ></i>
+            <h4 class="mt-2">Email</h4>
+            <p>reservations@gourmetbites.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer id="footer" class="footer text-white py-5">
-      <div class="container text-center">
-        <h3 class="fs-1">Gourmet Bites</h3>
-        <p>123 Wellness Way, Green Valley, 110001</p>
-        <p>For reservations, call us at +91 98765 43210</p>
-        <div>
-          <a href="#" class="text-white mx-2 fs-4"
-            ><i class="bi bi-instagram"></i
-          ></a>
-          <a href="#" class="text-white mx-2 fs-4"
-            ><i class="bi bi-facebook"></i
-          ></a>
-          <a href="#" class="text-white mx-2 fs-4"
-            ><i class="bi bi-twitter-x"></i
-          ></a>
-        </div>
-        <p class="mt-4 text-white-50">
-          &copy; 2025 Gourmet Bites. All Rights Reserved.
-        </p>
+    <footer>
+      <div class="container">
+        <h3>Gourmet Bites</h3>
+        <p class="text-white-50">© 2025 Gourmet Bites. All Rights Reserved.</p>
       </div>
     </footer>
 
